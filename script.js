@@ -1,4 +1,4 @@
-const symbols = ['🌟', '🍎', '🍕', '🚀', '🎈', '🎉', '🍦', '🍩'];
+const symbols = ['🌟', '🍎', '🍕', '🚀'];
 let shuffledSymbols = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
 let selectedCards = [];
 let attempts = 0;
@@ -11,7 +11,6 @@ function createCard(symbol)
 {
   const card = document.createElement('div');
   card.classList.add('card');
-  //card.textContent = symbol;
 
   card.addEventListener('click', () => 
   {
@@ -46,11 +45,7 @@ function checkMatch()
     card1.classList.add('hidden');
     card2.classList.add('hidden');
 
-    //if (document.querySelectorAll('.card.hidden').length === 0) {
-      //setTimeout(() => alert('Congratulations! You won!'), 200);
-    //}
-
-    if(solvedPairs == 8) 
+    if(solvedPairs == 4) 
     {
         setTimeout(() => alert('Congratulations! You won!'), 200);
         attempts = 0
